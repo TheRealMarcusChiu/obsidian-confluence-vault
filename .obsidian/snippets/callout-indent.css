@@ -1,0 +1,19 @@
+.callout[data-callout="indent"] {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 0 2.3em !important;  /* pull back to WORLD's level */
+  color: inherit !important;
+}
+
+.callout[data-callout="indent"] .callout-title {
+  display: none !important;
+}
+
+.callout[data-callout="indent"] .callout-content {
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}

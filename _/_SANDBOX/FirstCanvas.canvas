@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"a1068204fb770aa4","x":-125,"y":-30,"width":250,"height":60,"type":"text","text":""},
+		{"id":"7cbdc774e8c5b364","x":-349,"y":192,"width":400,"height":400,"type":"file","file":"Daily Notes/2026-05-16.md"},
+		{"id":"1df22ebfbd8baa2b","x":53,"y":168,"width":250,"height":60,"type":"text","text":"A Card"},
+		{"id":"9b608734c949a17e","x":118,"y":260,"width":400,"height":200,"type":"file","file":"Daily Notes/2026-05-15.md"}
+	],
+	"edges":[
+		{"id":"cae73916501eda75","fromNode":"a1068204fb770aa4","fromSide":"bottom","toNode":"7cbdc774e8c5b364","toSide":"top"},
+		{"id":"7271a18479bab11e","fromNode":"a1068204fb770aa4","fromSide":"bottom","toNode":"1df22ebfbd8baa2b","toSide":"top"},
+		{"id":"108d1db1daf00df5","fromNode":"a1068204fb770aa4","fromSide":"bottom","toNode":"9b608734c949a17e","toSide":"top"}
+	]
+}

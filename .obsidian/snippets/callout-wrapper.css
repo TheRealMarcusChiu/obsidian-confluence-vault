@@ -1,0 +1,27 @@
+.callout[data-callout="wrapper"] {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+.callout[data-callout="wrapper"] .callout-title {
+  display: none !important;
+}
+
+.callout[data-callout="wrapper"] .callout-content {
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* When the wrapper callout follows a list, pull it back */
+ul + .callout[data-callout="wrapper"],
+ol + .callout[data-callout="wrapper"],
+div:has(> ul) + div .callout[data-callout="wrapper"],
+div:has(> ol) + div .callout[data-callout="wrapper"] {
+  margin: 0 0 0 -2.3em !important;
+}

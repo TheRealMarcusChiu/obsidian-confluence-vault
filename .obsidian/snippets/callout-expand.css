@@ -1,0 +1,106 @@
+/************************************************************/
+/* 1. THE "EXPAND-UI" CALLOUT (Circular +/- with Separator) */
+/************************************************************/
+
+.callout[data-callout="expand-ui"] {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #ececec !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 12px 0 !important;
+}
+
+/* Hide accent bars at all nesting levels */
+.callout[data-callout="expand-ui"]::before,
+.callout[data-callout="expand-ui"] .callout::before {
+    display: none !important;
+}
+
+.callout[data-callout="expand-ui"] > .callout-title {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent !important;
+}
+
+.callout[data-callout="expand-ui"] .callout-title-inner {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #666666 !important;
+    text-transform: uppercase;
+}
+
+/* The Circle Icon */
+.callout[data-callout="expand-ui"] .callout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #666666;
+    border-radius: 50%;
+    position: relative;
+}
+
+.callout[data-callout="expand-ui"] .callout-icon svg { display: none; }
+
+/* Plus/Minus Lines */
+.callout[data-callout="expand-ui"] .callout-icon::after {
+    content: ""; position: absolute; width: 100%; width: 10px; height: 1.5px; background-color: #666666;
+}
+.callout[data-callout="expand-ui"].is-collapsed .callout-icon::before {
+    content: ""; position: absolute; width: 1.5px; height: 10px; background-color: #666666;
+}
+
+/* Expanded State for UI */
+.callout[data-callout="expand-ui"]:not(.is-collapsed) .callout-icon {
+    background-color: #000000;
+    border-color: #000000;
+}
+.callout[data-callout="expand-ui"]:not(.is-collapsed) .callout-icon::after {
+    background-color: #ffffff;
+}
+
+.callout[data-callout="expand-ui"] > .callout-content {
+    padding: 8px 0 0 36px !important;
+    color: #1a2a4e !important;
+}
+
+/************************************************************/
+/* 2. THE "EXPAND" CALLOUT (Blue Text with Chevron Arrow)   */
+/************************************************************/
+
+.callout[data-callout="expand"] {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 4px 0 !important;
+}
+
+/* Hide icons/bars */
+.callout[data-callout="expand"]::before,
+.callout[data-callout="expand"] .callout-icon {
+    display: none !important;
+}
+
+.callout[data-callout="expand"] > .callout-title {
+    padding: 0 !important;
+    color: #2b6cb0 !important; /* Link Blue */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.callout[data-callout="expand"] .callout-fold {
+    display: flex !important;
+    color: #333333 !important; /* Dark Chevron */
+}
+
+.callout[data-callout="expand"] > .callout-content {
+    padding: 4px 0 4px 20px !important; /* Relative indentation for nesting */
+    border-left: 1px solid #eee; /* Optional: light guide line for deep nests */
+}

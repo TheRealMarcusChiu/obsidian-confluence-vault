@@ -1,0 +1,10 @@
+{
+  "id": "expand-block",
+  "name": "Expand Block",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Renders collapsible expand blocks using fenced code blocks with the `expand` language tag. Click to reveal full markdown content.",
+  "author": "Your Name",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

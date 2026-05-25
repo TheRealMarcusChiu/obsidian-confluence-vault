@@ -1,0 +1,174 @@
+/* ── Merge Table Plugin ─────────────────────────────────────────────────────
+   Scoped under .merge-table-wrapper so nothing bleeds into Obsidian's own
+   table styles. Colours reference Obsidian CSS variables so the plugin
+   adapts automatically to any theme, including dark mode.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* ── Wrapper ── */
+
+.merge-table-wrapper {
+  overflow-x: auto;
+  margin: 0.75em 0;
+  border-radius: 4px;
+}
+
+/* Nested wrappers get tighter margins so they don't balloon the parent cell */
+.merge-table-cell .merge-table-wrapper {
+  margin: 0;
+  border-radius: 2px;
+}
+
+/* ── Table layout ── */
+
+.merge-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--font-text-size, 1em);
+  line-height: var(--line-height-normal, 1.6);
+  background-color: var(--table-background, transparent);
+}
+
+/* Nested tables shrink slightly at each level so they read as subordinate */
+.merge-table-cell .merge-table {
+  font-size: 0.93em;
+}
+.merge-table-cell .merge-table-cell .merge-table {
+  font-size: 0.93em; /* compounds: 0.93^2 ≈ 0.86 at depth 2, etc. */
+}
+
+/* Caption */
+.merge-table caption.merge-table-caption {
+  caption-side: top;
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* ── Cells ── */
+
+.merge-table td.merge-table-cell,
+.merge-table th.merge-table-cell {
+  border: 1px solid var(--table-border-color, var(--background-modifier-border));
+  padding: 7px 12px;
+  vertical-align: top;
+  min-width: 60px;
+  position: relative;
+  word-break: break-word;
+}
+
+/* Nested cells get tighter padding */
+.merge-table-cell .merge-table td.merge-table-cell,
+.merge-table-cell .merge-table th.merge-table-cell {
+  padding: 4px 8px;
+  min-width: 40px;
+}
+
+/* Header cells */
+.merge-table th.merge-table-cell {
+  background-color: var(--table-header-background, var(--background-secondary));
+  font-weight: 600;
+  text-align: center;
+  color: var(--table-header-color, var(--text-normal));
+}
+
+/* ── Depth-based border accent ──────────────────────────────────────────────
+   Each nesting level gets a slightly different border colour so the hierarchy
+   is visually obvious even without explicit bg colours.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* depth 0 = top-level: default border, no special outline */
+.merge-table-depth-0 > .merge-table {
+  outline: none;
+}
+
+/* depth 1 */
+.merge-table-depth-1 > .merge-table {
+  outline: 2px solid var(--color-accent, #7b6cd4);
+  outline-offset: -1px;
+  border-radius: 2px;
+}
+
+/* depth 2 */
+.merge-table-depth-2 > .merge-table {
+  outline: 2px solid var(--color-green, #4caf50);
+  outline-offset: -1px;
+}
+
+/* depth 3 */
+.merge-table-depth-3 > .merge-table {
+  outline: 2px solid var(--color-orange, #ff9800);
+  outline-offset: -1px;
+}
+
+/* depth 4+ */
+.merge-table-depth-4 > .merge-table,
+.merge-table-depth-5 > .merge-table,
+.merge-table-depth-6 > .merge-table,
+.merge-table-depth-7 > .merge-table,
+.merge-table-depth-8 > .merge-table {
+  outline: 2px solid var(--color-red, #f44336);
+  outline-offset: -1px;
+}
+
+/* ── Markdown content inside cells ── */
+
+.merge-table-cell-content > p:first-child { margin-top: 0; }
+.merge-table-cell-content > p:last-child  { margin-bottom: 0; }
+.merge-table-cell-content > *:only-child  { margin-top: 0; margin-bottom: 0; }
+
+.merge-table-cell-content ul,
+.merge-table-cell-content ol {
+  padding-inline-start: 1.4em;
+  margin: 0.25em 0;
+}
+
+.merge-table-cell-content pre {
+  margin: 0.4em 0;
+  white-space: pre-wrap;
+}
+
+.merge-table-cell-content code { font-size: 0.88em; }
+
+.merge-table-cell-content h1 { font-size: 1.2em; margin: 0.3em 0; }
+.merge-table-cell-content h2 { font-size: 1.1em; margin: 0.25em 0; }
+.merge-table-cell-content h3,
+.merge-table-cell-content h4,
+.merge-table-cell-content h5,
+.merge-table-cell-content h6 { font-size: 1em; margin: 0.2em 0; }
+
+.merge-table-cell-content img { max-width: 100%; display: block; }
+
+.merge-table-cell-content blockquote {
+  margin: 0.4em 0;
+  padding-left: 0.8em;
+  border-left: 3px solid var(--blockquote-border-color, var(--color-accent));
+  color: var(--text-muted);
+}
+
+.merge-table-cell-content .task-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4em;
+}
+
+/* ── Error display ── */
+
+.merge-table-error {
+  background-color: var(--background-modifier-error, rgba(220, 53, 69, 0.15));
+  color: var(--text-error, #dc3545);
+  border: 1px solid var(--text-error, #dc3545);
+  border-radius: 4px;
+  padding: 8px 14px;
+  margin: 8px 0;
+  font-size: 0.9em;
+}
+
+.merge-table-error-source {
+  margin-top: 6px;
+  opacity: 0.7;
+  font-size: 0.82em;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

@@ -1,0 +1,10 @@
+{
+  "id": "merge-table",
+  "name": "Merge Table",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Create rich tables with merged cells (colspan/rowspan), per-cell colour highlights, and full Markdown rendering inside every cell.",
+  "author": "Your Name",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

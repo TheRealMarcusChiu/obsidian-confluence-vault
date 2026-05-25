@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1778736152104,
+      "path": "Daily Notes/2026-05-15.md",
+      "title": "First Bookmark"
+    },
+    {
+      "type": "group",
+      "ctime": 1778736422693,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1778736409383,
+          "path": "Daily Notes/2026-05-15.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1778736409383,
+          "path": "Daily Notes/2026-05-16.md"
+        }
+      ],
+      "title": "May 14, 2026 12:26 AM"
+    },
+    {
+      "type": "group",
+      "ctime": 1778736862843,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1778736871498,
+          "path": "Daily Notes/2026-05-15.md"
+        }
+      ],
+      "title": "Untitled group"
+    },
+    {
+      "type": "file",
+      "ctime": 1778736888600,
+      "path": "Daily Notes/2026-05-15.md"
+    }
+  ]
+}

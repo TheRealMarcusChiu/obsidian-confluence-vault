@@ -1,0 +1,138 @@
+/* ═══════════════════════════════════════════════════════
+   Expand Plugin — styles.css
+   Two variants:
+     1. .expand-*     — transparent, inline (```expand)
+     2. .expand-ui-*  — bordered block     (```expand-ui)
+   ═══════════════════════════════════════════════════════ */
+
+
+/* ── 1. TRANSPARENT INLINE VARIANT ─────────────────────── */
+
+/* Strip Obsidian's code-block chrome */
+.expand-host,
+.expand-pre-reset {
+  all: unset;
+  display: block;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: inherit !important;
+}
+
+.expand-block {
+  display: block;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.expand-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+  background: transparent;
+  border: none;
+  line-height: inherit;
+}
+
+.expand-summary:hover .expand-title {
+  text-decoration: underline;
+  text-decoration-color: var(--text-muted);
+  text-underline-offset: 2px;
+}
+
+.expand-chevron {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+  transition: transform 0.18s ease;
+  flex-shrink: 0;
+}
+
+.expand-open > .expand-summary .expand-chevron {
+  transform: rotate(90deg);
+}
+
+.expand-title {
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--text-muted);
+  letter-spacing: inherit;
+}
+
+.expand-content {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.expand-content > *:first-child { margin-top: 0.25em !important; }
+.expand-content > *:last-child  { margin-bottom: 0 !important; }
+
+
+/* ── 2. BORDERED UI-BLOCK VARIANT ───────────────────────── */
+
+.expand-ui-block {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  margin: 0.75em 0;
+  overflow: hidden;
+  background: var(--background-primary);
+  transition: box-shadow 0.15s ease;
+}
+
+.expand-ui-block:hover {
+  box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+.expand-ui-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  user-select: none;
+  background: var(--background-secondary);
+  border-bottom: 1px solid transparent;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+
+.expand-ui-summary:hover {
+  background: var(--background-modifier-hover);
+}
+
+.expand-ui-open > .expand-ui-summary {
+  border-bottom-color: var(--background-modifier-border);
+}
+
+.expand-ui-chevron {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.expand-ui-open > .expand-ui-summary .expand-ui-chevron {
+  transform: rotate(90deg);
+}
+
+.expand-ui-title {
+  font-size: 0.92em;
+  font-weight: 600;
+  color: var(--text-normal);
+  letter-spacing: 0.01em;
+}
+
+.expand-ui-content {
+  padding: 14px 18px;
+}
+
+.expand-ui-content > *:first-child { margin-top: 0 !important; }
+.expand-ui-content > *:last-child  { margin-bottom: 0 !important; }

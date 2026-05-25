@@ -1,0 +1,22 @@
+/* Target YouTube frames globally when Readable Line Length is turned OFF */
+.cm-embed-block:has(iframe[src*="youtube"]),
+.internal-embed:has(iframe[src*="youtube"]),
+.markdown-source-view iframe[src*="youtube"],
+.markdown-rendered iframe[src*="youtube"] {
+    max-width: 480px !important;
+    width: 100% !important;
+    height: 270px !important;
+    display: block !important;
+    /* Centers the video in the middle of your massive wide screen */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Hard override for the internal sizing inside the canvas wrappers */
+.cm-embed-block iframe, 
+.internal-embed iframe {
+    max-width: 480px !important;
+    height: 270px !important;
+}

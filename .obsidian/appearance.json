@@ -1,0 +1,16 @@
+{
+  "theme": "moonstone",
+  "cssTheme": "",
+  "showViewHeader": true,
+  "showRibbon": true,
+  "translucency": false,
+  "enabledCssSnippets": [
+    "callout-expand-2",
+    "callout-expand",
+    "callout-indent",
+    "callout-list-indent-undo",
+    "callout-wrapper",
+    "table-no-wrap",
+    "youtube-embeds"
+  ]
+}

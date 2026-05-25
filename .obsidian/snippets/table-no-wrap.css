@@ -1,0 +1,15 @@
+/* Disable text wrapping in Obsidian tables and enable horizontal scroll */
+.cm-embed-block:has(.main-table-wrapper),
+.markdown-rendered table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Ensure individual cells don't wrap text */
+.markdown-rendered td, 
+.markdown-rendered th,
+.cm-embed-block td,
+.cm-embed-block th {
+    white-space: nowrap !important;
+}

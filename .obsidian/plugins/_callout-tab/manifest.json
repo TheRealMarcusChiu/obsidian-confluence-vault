@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-tabs",
+  "name": "Tabs",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Render tabbed content blocks with full Markdown support inside each tab.",
+  "author": "You",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}
